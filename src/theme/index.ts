@@ -25,13 +25,11 @@ const colors: ThemeColors = {
 };
 
 const sizes: ThemeSizes = {
-  paddings: {
+  spacings: {
     md: 36,
     lg: 50,
   },
-  spacings: {
-    container: 340,
-  },
+  container: 340,
   input: {
     lg: 340,
     md: 165,

@@ -37,7 +37,7 @@ const TextField: TextFieldComponent = ({
 }
 
 const StyledTextFieldContainer = styled.div`
-  width: ${props => mapToThemeSizes(props.theme).spacings.container}px;
+  width: ${props => mapToThemeSizes(props.theme).container}px;
   position: relative;
 `;
 

@@ -1,24 +1,15 @@
+import { ResponsiveProps } from "../shared/common.types";
+
 type Theme = {
   colors: ThemeColors;
   sizes: ThemeSizes;
 }
 
 export type ThemeSizes = {
-  paddings: {
-    md: number,
-    lg: number,
-  },
-  spacings: {
-    container: number,
-  },
-  input: {
-    lg: number,
-    md: number,
-  },
-  font: {
-    lg: number,
-    md: number,
-  }
+  spacings: Required<Omit<ResponsiveProps<number>, 'sm'>>,
+  container: number,
+  input: Required<Omit<ResponsiveProps<number>, 'sm'>>,
+  font: Required<Omit<ResponsiveProps<number>, 'sm'>>
 }
 
 export type ThemeColors = {

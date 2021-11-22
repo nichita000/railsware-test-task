@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import styled from 'styled-components';
+import Box from '../../components/content/Box';
 import TextField from '../../components/inputs/TextField';
 import LoginFormComponent, { LoginFormValues } from './LoginForm.types';
 
@@ -17,20 +18,24 @@ const LoginForm: LoginFormComponent = ({
 
   return (
     <LoginFormContainer onSubmit={form.handleSubmit}>
-      <TextField
-        placeholder="Email"
-        name="email"
-        value={form.values.email}
-        onChange={form.handleChange}
-      />
+      <Box pb="md">
+        <TextField
+          placeholder="Email"
+          name="email"
+          value={form.values.email}
+          onChange={form.handleChange}
+        />
+      </Box>
 
-      <TextField
-        placeholder="Password"
-        name="password"
-        type="password"
-        value={form.values.password}
-        onChange={form.handleChange}
-      />
+      <Box pb="md">
+        <TextField
+          placeholder="Password"
+          name="password"
+          type="password"
+          value={form.values.password}
+          onChange={form.handleChange}
+        />
+      </Box>
     </LoginFormContainer>
   );
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import LoginIllustration from '../../assets/images/login-illustration.svg';
+import Box from '../../components/content/Box';
 import Typography from '../../components/content/Typography';
 import LoginForm from './LoginForm';
 import { LoginFormValues } from './LoginForm.types';
@@ -9,11 +10,16 @@ const Login = () => {
 
   return (
     <LoginContainer>
-      <img src={LoginIllustration} alt="Login Illustration" />
 
-      <Typography heading>
-        Welcome Back!
-      </Typography>
+      <Box pb="md">
+        <img src={LoginIllustration} alt="Login Illustration" />
+      </Box>
+
+      <Box pb="md">
+        <Typography heading>
+          Welcome Back!
+        </Typography>
+      </Box>
 
       <LoginForm onSubmit={handleSubmit} />
     </LoginContainer>
