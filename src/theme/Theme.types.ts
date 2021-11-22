@@ -15,6 +15,10 @@ export type ThemeSizes = {
     lg: number,
     md: number,
   },
+  font: {
+    lg: number,
+    md: number,
+  }
 }
 
 export type ThemeColors = {

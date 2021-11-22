@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Container from './components/Container';
+import Container from './components/layout/Container';
 import CommonProviders from './shared/CommonProviders';
 import Login from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';

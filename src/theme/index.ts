@@ -35,6 +35,10 @@ const sizes: ThemeSizes = {
   input: {
     lg: 340,
     md: 165,
+  },
+  font: {
+    lg: 36,
+    md: 28,
   }
 };
 
