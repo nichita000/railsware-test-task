@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { mapToThemeColors, mapToThemeSizes } from '../../../shared/theme-mappers';
 import TypographyProps from './Typography.types';
 
-const Typography = styled.span<TypographyProps>`
+export const Typography = styled.span<TypographyProps>`
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
 
@@ -16,6 +16,8 @@ const Typography = styled.span<TypographyProps>`
   ${props => props.hint && css`
     color: ${props => mapToThemeColors(props.theme).typography.hintColor};
     line-height: ${props => mapToThemeSizes(props.theme).font.md}px;
+    // TODO: ???
+    padding: 0 5px;
   `}
 
   ${props => props.link && css`
@@ -25,5 +27,3 @@ const Typography = styled.span<TypographyProps>`
     cursor: pointer;
   `}
 `;
-
-export default Typography;

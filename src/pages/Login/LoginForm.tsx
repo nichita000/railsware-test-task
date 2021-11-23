@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Box from '../../components/content/Box';
+import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
@@ -40,7 +40,7 @@ const LoginForm: LoginFormComponent = ({
         />
 
         <ForgotPasswordLinkContainer>
-          <Typography link as={Link} to="forgot-password">
+          <Typography link as={Link} to="/forgot-password">
             Forgot Password?
           </Typography>
         </ForgotPasswordLinkContainer>

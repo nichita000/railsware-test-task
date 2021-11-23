@@ -11,7 +11,7 @@ import BoxProps from './Box.types';
  *  <Box mx="md"> ... </Box> // Div with left/right margin equal to `md` size
  * ``
  */
-const Box = styled.div<BoxProps>`
+export const Box = styled.div<BoxProps>`
   ${props => props.px && css`
     padding-left: ${props.theme.sizes.spacings[props.px]}px;
     padding-right: ${props.theme.sizes.spacings[props.px]}px;
@@ -64,5 +64,3 @@ const Box = styled.div<BoxProps>`
     margin-left: ${props.theme.sizes.spacings[props.ml]}px;
   `}
 `;
-
-export default Box;

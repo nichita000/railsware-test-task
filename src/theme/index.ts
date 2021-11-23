@@ -34,13 +34,13 @@ const sizes: ThemeSizes = {
     md: 36,
     lg: 50,
   },
-  container: 340,
+  container: 344,
   textField: {
-    lg: 340,
+    lg: 344,
     md: 165,
   },
   button: {
-    lg: 340,
+    lg: 344,
     md: 165,
   },
   font: {

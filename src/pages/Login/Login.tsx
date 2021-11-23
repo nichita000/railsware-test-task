@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import LoginIllustration from '../../assets/images/login-illustration.svg';
-import Box from '../../components/content/Box';
+import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import Theme from '../../theme/Theme.types';
 import LoginForm from './LoginForm';
 import { LoginFormValues } from './LoginForm.types';
 
-const Login = () => {
+export const Login = () => {
   const theme = useContext<Theme>(ThemeContext);
   const themeButtonColors = theme.colors.button;
 
@@ -16,7 +16,6 @@ const Login = () => {
 
   return (
     <LoginContainer>
-
       <Box pb="md">
         <img src={LoginIllustration} alt="Login Illustration" />
       </Box>
@@ -44,11 +43,11 @@ const Login = () => {
           Google
         </Button>
       </SocialButtonsContainer>
-
     </LoginContainer>
   );
 };
 
+// TODO: FlexContainer
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,5 +60,3 @@ const SocialButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
-export default Login;

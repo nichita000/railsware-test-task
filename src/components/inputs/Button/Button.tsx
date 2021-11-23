@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ButtonProps from './Button.types';
 
-const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   width: ${props => props.size ?
     props.theme.sizes.button[props.size] :
     props.theme.sizes.button.lg
@@ -22,5 +22,3 @@ const Button = styled.button<ButtonProps>`
   border: none;
   cursor: pointer;
 `;
-
-export default Button;

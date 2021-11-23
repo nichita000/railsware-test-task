@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import TextFieldComponent, { StyledTextFieldProps } from "./TextField.types";
 
-const TextField: TextFieldComponent = ({
+export const TextField: TextFieldComponent = ({
   className,
   placeholder,
   value: valueProp,
@@ -44,7 +44,7 @@ const StyledTextField = styled.input<StyledTextFieldProps>`
   border-radius: 5px;
   border: 1px solid;
   border-color: ${props => props.theme.colors.textField.border};
-  padding: 15px 12px;
+  padding: 15px 18px;
   box-sizing: border-box;
   font-size: 16px; // TODO: theme
   color: ${props => props.theme.colors.textField.textColor};
@@ -62,6 +62,4 @@ const StyledTextField = styled.input<StyledTextFieldProps>`
       color: ${props => props.theme.colors.textField.colorPrimary};
     }
   `}
-`
-
-export default TextField;
+`;
