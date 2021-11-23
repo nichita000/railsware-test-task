@@ -19,6 +19,7 @@ const Typography = styled.span<TypographyProps>`
   `}
 
   ${props => props.link && css`
+    text-decoration: none;
     color: ${props => mapToThemeColors(props.theme).typography.linkColor};
     line-height: ${props => mapToThemeSizes(props.theme).font.md}px;
     cursor: pointer;

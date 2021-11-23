@@ -1,6 +1,8 @@
 import { useFormik } from 'formik';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Box from '../../components/content/Box';
+import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
 import LoginFormComponent, { LoginFormValues } from './LoginForm.types';
@@ -36,6 +38,12 @@ const LoginForm: LoginFormComponent = ({
           value={form.values.password}
           onChange={form.handleChange}
         />
+
+        <ForgotPasswordLinkContainer>
+          <Typography link as={Link} to="forgot-password">
+            Forgot Password?
+          </Typography>
+        </ForgotPasswordLinkContainer>
       </Box>
 
       <Button>LOG IN</Button>
@@ -47,6 +55,12 @@ const LoginFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const ForgotPasswordLinkContainer = styled.div`
+  width: ${props => props.theme.sizes.common.fullWidth};
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export default LoginForm;

@@ -6,6 +6,9 @@ type Theme = {
 };
 
 export type ThemeSizes = {
+  common: {
+    fullWidth: string,
+  },
   spacings: Omit<ResponsiveSizes<number>, 'sm'>,
   container: number,
   textField: Omit<ResponsiveSizes<number>, 'sm'>,

@@ -27,6 +27,9 @@ const colors: ThemeColors = {
 };
 
 const sizes: ThemeSizes = {
+  common: {
+    fullWidth: '100%',
+  },
   spacings: {
     md: 36,
     lg: 50,
