@@ -1,39 +1,41 @@
-import { ResponsiveProps } from "../shared/common.types";
+import { ResponsiveSizes } from "../shared/common.types";
 
 type Theme = {
   colors: ThemeColors;
   sizes: ThemeSizes;
-}
+};
 
 export type ThemeSizes = {
-  spacings: Required<Omit<ResponsiveProps<number>, 'sm'>>,
+  spacings: Omit<ResponsiveSizes<number>, 'sm'>,
   container: number,
-  input: Required<Omit<ResponsiveProps<number>, 'sm'>>,
-  font: Required<Omit<ResponsiveProps<number>, 'sm'>>
-}
+  textField: Omit<ResponsiveSizes<number>, 'sm'>,
+  button: Omit<ResponsiveSizes<number>, 'sm'>,
+  font: Omit<ResponsiveSizes<number>, 'sm'>,
+};
 
 export type ThemeColors = {
-  inputs: {
-    border: string,
-    borderFocus: string,
-    color: string,
-    colorFocus: string,
-    placeholder: string,
-    placeholderFocus: string,
-    prefixIcon: string,
-    prefixIconFocus: string,
+  button: {
+    backgroundPrimary: string,
+    backgroundCardUpgrade: string,
+    backgroundFacebook: string,
+    backgroundGoogle: string,
+    textColor: string,
   },
-  buttons: {
+  textField: {
+    border: string,
+    borderPrimary: string,
     color: string,
-    backgroundBlue: string,
-    backgroundRed: string,
-    backgroundBurgary: string,
+    colorPrimary: string,
+    placeholder: string,
+    placeholderPrimary: string,
+    prefixIcon: string,
+    prefixIconPrimary: string,
   },
   typography: {
     headingColor: string,
     hintColor: string,
     linkColor: string,
-  }
+  },
 };
 
 export default Theme;

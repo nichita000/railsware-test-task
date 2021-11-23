@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { mapToThemeColors, mapToThemeSizes } from "../../../shared/theme-mappers";
-import TextFieldComponent from "./TextField.types";
+import styled, { css } from "styled-components";
+import TextFieldComponent, { StyledTextFieldProps } from "./TextField.types";
 
 const TextField: TextFieldComponent = ({
   className,
   placeholder,
   value: valueProp,
-  type,
-  name,
-  onChange,
-  ...props
+  type = 'text',
+  name = '',
+  fieldSize,
+  primary,
+  onChange
 }) => {
   const [value, setValue] = useState<string>(valueProp ?? '');
 
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
 
     if (onChange) {
@@ -23,46 +23,45 @@ const TextField: TextFieldComponent = ({
   }
 
   return (
-    <StyledTextFieldContainer>
-      <StyledTextField
-        className={className}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        name={name}
-        onChange={handleOnChange}
-      />
-    </StyledTextFieldContainer>
-  )
+    <StyledTextField
+      className={className}
+      placeholder={placeholder}
+      value={value}
+      type={type}
+      name={name}
+      fieldSize={fieldSize}
+      primary={primary}
+      onChange={handleChange}
+    />
+  );
 }
 
-const StyledTextFieldContainer = styled.div`
-  width: ${props => mapToThemeSizes(props.theme).container}px;
-  position: relative;
-`;
-
-const StyledTextField = styled.input`
-  width: 100%;
-  height: 50px;
+const StyledTextField = styled.input<StyledTextFieldProps>`
+  width: ${props => props.fieldSize ?
+    props.theme.sizes.textField[props.fieldSize] :
+    props.theme.sizes.textField.lg
+  }px;
   border-radius: 5px;
   border: 1px solid;
-  border-color: ${props => mapToThemeColors(props.theme).inputs.border};
-  padding: 12px 12px;
+  border-color: ${props => props.theme.colors.textField.border};
+  padding: 15px 12px;
   box-sizing: border-box;
-  font-size: 16px;
-  color: ${props => mapToThemeColors(props.theme).inputs.color};
+  font-size: 16px; // TODO: theme
+  color: ${props => props.theme.colors.textField.textColor};
   outline: none;
-  &:focus {
-    border-color: ${props => mapToThemeColors(props.theme).inputs.borderFocus};
-    color: ${props => mapToThemeColors(props.theme).inputs.colorFocus};
-    &::placeholder {
-      color: ${props => mapToThemeColors(props.theme).inputs.placeholderFocus};
-    }
-  }
+
   &::placeholder {
-    color: ${props => mapToThemeColors(props.theme).inputs.placeholder};
-    opacity: .7;
+    color: ${props => props.theme.colors.textField.placeholder};
   }
-`;
+
+  ${props => props.primary && css`
+    border-color: ${props => props.theme.colors.textField.borderPrimary};
+    color: ${props => props.theme.colors.textField.colorPrimary};
+
+    &::placeholder {
+      color: ${props => props.theme.colors.textField.colorPrimary};
+    }
+  `}
+`
 
 export default TextField;

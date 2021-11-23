@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import styled from 'styled-components';
 import Box from '../../components/content/Box';
+import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
 import LoginFormComponent, { LoginFormValues } from './LoginForm.types';
 
@@ -19,7 +20,7 @@ const LoginForm: LoginFormComponent = ({
   return (
     <LoginFormContainer onSubmit={form.handleSubmit}>
       <Box pb="md">
-        <TextField
+        <TextField primary
           placeholder="Email"
           name="email"
           value={form.values.email}
@@ -36,6 +37,8 @@ const LoginForm: LoginFormComponent = ({
           onChange={form.handleChange}
         />
       </Box>
+
+      <Button>LOG IN</Button>
     </LoginFormContainer>
   );
 };

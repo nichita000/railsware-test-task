@@ -1,4 +1,3 @@
-import { ResponsiveProps } from "../../../shared/common.types";
 import { ThemeSizes } from "../../../theme/Theme.types";
 
 type Paddings = 'px' | 'py' | 'pt' | 'pr' | 'pb' | 'pl';

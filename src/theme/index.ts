@@ -1,21 +1,23 @@
 import Theme, { ThemeColors, ThemeSizes } from './Theme.types';
 
 const colors: ThemeColors = {
-  inputs: {
-    border: '#C3C3C3',
-    borderFocus: '#1A4F8B',
-    color: '#6A6A6A',
-    colorFocus: '#1A4F8B',
-    placeholder: '#767676',
-    placeholderFocus: '#1A4F8B',
-    prefixIcon: '#C3C3C3',
-    prefixIconFocus: '#1A4F8B',
+  // TODO: Think of moving primary color to common
+  button: {
+    backgroundPrimary: '#1A4F8B',
+    backgroundCardUpgrade: '#BF1541',
+    backgroundFacebook: '#385C8E',
+    backgroundGoogle: '#F14436',
+    textColor: '#FFFFFF',
   },
-  buttons: {
-    color: '#FFFFFF',
-    backgroundBlue: '#1A4F8B',
-    backgroundRed: '#F14436',
-    backgroundBurgary: '#BF1541',
+  textField: {
+    border: '#C3C3C3',
+    borderPrimary: '#1A4F8B',
+    color: '#6A6A6A',
+    colorPrimary: '#1A4F8B',
+    placeholder: '#767676',
+    placeholderPrimary: '#1A4F8B',
+    prefixIcon: '#C3C3C3',
+    prefixIconPrimary: '#1A4F8B',
   },
   typography: {
     headingColor: '#000000',
@@ -30,7 +32,11 @@ const sizes: ThemeSizes = {
     lg: 50,
   },
   container: 340,
-  input: {
+  textField: {
+    lg: 340,
+    md: 165,
+  },
+  button: {
     lg: 340,
     md: 165,
   },
