@@ -13,54 +13,54 @@ import BoxProps from './Box.types';
  */
 export const Box = styled.div<BoxProps>`
   ${props => props.px && css`
-    padding-left: ${props.theme.sizes.spacings[props.px]}px;
-    padding-right: ${props.theme.sizes.spacings[props.px]}px;
+    padding-left: ${props.theme.sizes.spacings[props.px]};
+    padding-right: ${props.theme.sizes.spacings[props.px]};
   `}
 
   ${props => props.py && css`
-    padding-top: ${props.theme.sizes.spacings[props.py]}px;
-    padding-bottom: ${props.theme.sizes.spacings[props.py]}px;
+    padding-top: ${props.theme.sizes.spacings[props.py]};
+    padding-bottom: ${props.theme.sizes.spacings[props.py]};
   `}
 
   ${props => props.pt && css`
-    padding-top: ${props.theme.sizes.spacings[props.pt]}px;
+    padding-top: ${props.theme.sizes.spacings[props.pt]};
   `}
 
   ${props => props.pr && css`
-    padding-right: ${props.theme.sizes.spacings[props.pr]}px;
+    padding-right: ${props.theme.sizes.spacings[props.pr]};
   `}
 
   ${props => props.pb && css`
-    padding-bottom: ${props.theme.sizes.spacings[props.pb]}px;
+    padding-bottom: ${props.theme.sizes.spacings[props.pb]};
   `}
 
   ${props => props.pl && css`
-    padding-left: ${props.theme.sizes.spacings[props.pl]}px;
+    padding-left: ${props.theme.sizes.spacings[props.pl]};
   `}
 
   ${props => props.mx && css`
-    margin-left: ${props.theme.sizes.spacings[props.mx]}px;
-    margin-right: ${props.theme.sizes.spacings[props.mx]}px;
+    margin-left: ${props.theme.sizes.spacings[props.mx]};
+    margin-right: ${props.theme.sizes.spacings[props.mx]};
   `}
 
   ${props => props.my && css`
-    margin-top: ${props.theme.sizes.spacings[props.my]}px;
-    margin-bottom: ${props.theme.sizes.spacings[props.my]}px;
+    margin-top: ${props.theme.sizes.spacings[props.my]};
+    margin-bottom: ${props.theme.sizes.spacings[props.my]};
   `}
 
   ${props => props.mt && css`
-    margin-top: ${props.theme.sizes.spacings[props.mt]}px;
+    margin-top: ${props.theme.sizes.spacings[props.mt]};
   `}
 
   ${props => props.mr && css`
-    margin-right: ${props.theme.sizes.spacings[props.mr]}px;
+    margin-right: ${props.theme.sizes.spacings[props.mr]};
   `}
 
   ${props => props.mb && css`
-    margin-bottom: ${props.theme.sizes.spacings[props.mb]}px;
+    margin-bottom: ${props.theme.sizes.spacings[props.mb]};
   `}
 
   ${props => props.ml && css`
-    margin-left: ${props.theme.sizes.spacings[props.ml]}px;
+    margin-left: ${props.theme.sizes.spacings[props.ml]};
   `}
 `;

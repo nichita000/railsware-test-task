@@ -1,10 +1,10 @@
-export type LoginFormValues = {
+export type UserDetails = {
   email: string;
   password: string;
 }
 
 type LoginFormProps = {
-  onSubmit: (values: LoginFormValues) => void;
+  onSubmit: (values: UserDetails) => void;
 }
 
 type LoginFormComponent = React.FC<LoginFormProps>;

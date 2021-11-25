@@ -1,7 +1,8 @@
 import { ThemeSizes } from "../../../theme/Theme.types";
 
 export type StyledTextFieldProps = {
-  fieldSize?: keyof ThemeSizes['textField'];
+  fieldSize?: keyof ThemeSizes['breakpoints'];
+  hasPrefixIcon?: boolean;
   primary?: boolean;
 };
 
@@ -13,7 +14,7 @@ type TextFieldProps = {
   value?: string;
   type?: 'text' | 'email' | 'password';
   name?: string;
-  fieldSize?: keyof ThemeSizes['textField'];
+  fieldSize?: keyof ThemeSizes['breakpoints'];
   primary?: boolean;
   onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };

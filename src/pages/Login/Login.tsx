@@ -6,16 +6,20 @@ import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import Theme from '../../theme/Theme.types';
 import LoginForm from './LoginForm';
-import { LoginFormValues } from './LoginForm.types';
+import { UserDetails } from './LoginForm.types';
+import FlexboxContainer from '../../components/layout/FlexboxContainer';
 
 export const Login = () => {
   const theme = useContext<Theme>(ThemeContext);
   const themeButtonColors = theme.colors.button;
 
-  const handleSubmit = (values: LoginFormValues) => console.table(values);
+  const handleSubmit = (values: UserDetails) => console.table(values);
 
   return (
-    <LoginContainer>
+    <FlexboxContainer
+      direction="column"
+      alignItems="center">
+
       <Box pb="md">
         <img src={LoginIllustration} alt="Login Illustration" />
       </Box>
@@ -34,29 +38,19 @@ export const Login = () => {
         </Typography>
       </Box>
 
-      <SocialButtonsContainer>
-        <Button size="md" color={themeButtonColors.backgroundFacebook}>
-          Facebook
+      <SocialButtonsContainer justifyContent="space-between">
+        <Button size="sm" color={themeButtonColors.backgroundFacebook}>
+          <Typography>Facebook</Typography>
         </Button>
 
-        <Button size="md" color={themeButtonColors.backgroundGoogle}>
-          Google
+        <Button size="sm" color={themeButtonColors.backgroundGoogle}>
+        <Typography>Google</Typography>
         </Button>
       </SocialButtonsContainer>
-    </LoginContainer>
+    </FlexboxContainer>
   );
 };
 
-// TODO: FlexContainer
-const LoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-`;
-
-const SocialButtonsContainer = styled.div`
-  width: ${props => props.theme.sizes.common.fullWidth};
-  display: flex;
-  justify-content: space-between;
+const SocialButtonsContainer = styled(FlexboxContainer)`
+  width: ${props => props.theme.sizes.breakpoints.md};
 `;

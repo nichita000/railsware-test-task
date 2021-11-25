@@ -1,4 +1,4 @@
-export type CardValues = {
+export type CardDetails = {
   cardNumber: string,
   expiryDate: string,
   cvv: string,
@@ -6,7 +6,7 @@ export type CardValues = {
 }
 
 type CardFormProps = {
-  onSubmitted: (card: CardValues) => void;
+  onSubmitted: (card: CardDetails) => void;
 }
 
 export type CardFormComponent = React.FC<CardFormProps>;

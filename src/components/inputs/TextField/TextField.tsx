@@ -10,6 +10,7 @@ export const TextField: TextFieldComponent = ({
   name = '',
   fieldSize,
   primary,
+  prefixIcon: PrefixIcon,
   onChange
 }) => {
   const [value, setValue] = useState<string>(valueProp ?? '');
@@ -23,36 +24,59 @@ export const TextField: TextFieldComponent = ({
   }
 
   return (
-    <StyledTextField
-      className={className}
-      placeholder={placeholder}
-      value={value}
-      type={type}
-      name={name}
-      fieldSize={fieldSize}
-      primary={primary}
-      onChange={handleChange}
-    />
+    <FormField>
+      {PrefixIcon && (
+        <IconPrefixContainer>
+          {PrefixIcon}
+        </IconPrefixContainer>
+      )}
+
+      <StyledTextField
+        className={className}
+        placeholder={placeholder}
+        value={value}
+        type={type}
+        name={name}
+        hasPrefixIcon={Boolean(PrefixIcon)}
+        fieldSize={fieldSize}
+        primary={primary}
+        onChange={handleChange}
+      />
+    </FormField>
   );
 }
 
+const FormField = styled.div`
+  position: relative;
+`;
+
+const IconPrefixContainer = styled.div`
+  position: absolute;
+  top: 12px;
+  left: 12px;
+`
+
 const StyledTextField = styled.input<StyledTextFieldProps>`
   width: ${props => props.fieldSize ?
-    props.theme.sizes.textField[props.fieldSize] :
-    props.theme.sizes.textField.lg
-  }px;
+    props.theme.sizes.breakpoints[props.fieldSize] :
+    props.theme.sizes.breakpoints.md
+  };
   border-radius: 5px;
   border: 1px solid;
   border-color: ${props => props.theme.colors.textField.border};
-  padding: 15px 18px;
+  padding: 17px 18px;
   box-sizing: border-box;
-  font-size: 16px; // TODO: theme
+  font-size: ${props => props.theme.sizes.font.sm};
   color: ${props => props.theme.colors.textField.textColor};
   outline: none;
 
   &::placeholder {
     color: ${props => props.theme.colors.textField.placeholder};
   }
+
+  ${props => props.hasPrefixIcon && css`
+    padding-left: 46px;
+  `}
 
   ${props => props.primary && css`
     border-color: ${props => props.theme.colors.textField.borderPrimary};

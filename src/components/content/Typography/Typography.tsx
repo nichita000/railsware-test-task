@@ -1,29 +1,28 @@
 import styled, { css } from 'styled-components';
-import { mapToThemeColors, mapToThemeSizes } from '../../../shared/theme-mappers';
 import TypographyProps from './Typography.types';
 
 export const Typography = styled.span<TypographyProps>`
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
+  line-height: 20px;
 
   ${props => props.heading && css`
     font-weight: bold;
-    font-size: ${props => mapToThemeSizes(props.theme).font.lg}px;
+    font-size: ${props => props.theme.sizes.font.lg};
     line-height: 42px;
-    color: ${props => mapToThemeColors(props.theme).typography.headingColor};
+    color: ${props => props.theme.colors.typography.headingColor};
   `}
 
   ${props => props.hint && css`
-    color: ${props => mapToThemeColors(props.theme).typography.hintColor};
-    line-height: ${props => mapToThemeSizes(props.theme).font.md}px;
-    // TODO: ???
+    color: ${props => props.theme.colors.typography.hintColor};
+    line-height: ${props => props.theme.sizes.font.md};
     padding: 0 5px;
   `}
 
   ${props => props.link && css`
     text-decoration: none;
-    color: ${props => mapToThemeColors(props.theme).typography.linkColor};
-    line-height: ${props => mapToThemeSizes(props.theme).font.md}px;
+    color: ${props => props.theme.colors.typography.linkColor};
+    line-height: ${props => props.theme.sizes.font.md};
     cursor: pointer;
   `}
 `;

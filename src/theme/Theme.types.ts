@@ -5,15 +5,23 @@ type Theme = {
   sizes: ThemeSizes;
 };
 
+type NamedSpacings = {
+  padding?: string;
+  margin?: string;
+}
+
+type NamedSizes = {
+  sizes?: Omit<ResponsiveSizes<string>, 'sm'>,
+  spacings?: NamedSpacings,
+}
+
 export type ThemeSizes = {
   common: {
     fullWidth: string,
   },
-  spacings: Omit<ResponsiveSizes<number>, 'sm'>,
-  container: number,
-  textField: Omit<ResponsiveSizes<number>, 'sm'>,
-  button: Omit<ResponsiveSizes<number>, 'sm'>,
-  font: Omit<ResponsiveSizes<number>, 'sm'>,
+  spacings: Omit<ResponsiveSizes<string>, 'sm'>,
+  breakpoints: ResponsiveSizes<string>,
+  font: ResponsiveSizes<string>,
 };
 
 export type ThemeColors = {
@@ -23,6 +31,10 @@ export type ThemeColors = {
     backgroundFacebook: string,
     backgroundGoogle: string,
     textColor: string,
+  },
+  icon: {
+    primary: string,
+    secondary: string,
   },
   textField: {
     border: string,

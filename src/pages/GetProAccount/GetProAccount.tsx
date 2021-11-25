@@ -3,18 +3,16 @@ import Box from '../../components/layout/Box';
 import GetProAccountIllustration from '../../assets/images/get-pro-account-illustration.svg';
 import Typography from '../../components/content/Typography';
 import { CardForm } from './CardForm';
-import { CardValues } from './CardForm.type';
+import { CardDetails } from './CardForm.type';
 
 export const GetProAccount = () => {
-  const handleUpgradeSubmitted = (card: CardValues) => console.table(card);
+  const handleUpgradeSubmitted = (card: CardDetails) => console.table(card);
 
   return (
     <FlexboxContainer direction="column" alignItems="center">
 
       <Box py="lg">
-        <Typography heading>
-          Get Pro Account
-        </Typography>
+        <Typography heading>Get Pro Account</Typography>
       </Box>
 
       <Box pb="md">

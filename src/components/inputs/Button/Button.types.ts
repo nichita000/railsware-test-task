@@ -1,7 +1,7 @@
 import { ThemeColors, ThemeSizes } from "../../../theme/Theme.types";
 
 type ButtonProps = {
-  size?: keyof ThemeSizes['button'];
+  size?: keyof ThemeSizes['breakpoints'];
   backgoundColor?: ThemeColors['button'];
   textColor?: ThemeColors['button'];
 }

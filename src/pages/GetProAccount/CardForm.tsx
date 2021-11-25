@@ -3,10 +3,11 @@ import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
+import Typography from '../../components/content/Typography';
 import Box from '../../components/layout/Box';
 import FlexboxContainer from '../../components/layout/FlexboxContainer';
 import Theme from '../../theme/Theme.types';
-import { CardFormComponent, CardValues } from './CardForm.type';
+import { CardFormComponent, CardDetails } from './CardForm.type';
 
 export const CardForm: CardFormComponent = ({
   onSubmitted,
@@ -14,14 +15,13 @@ export const CardForm: CardFormComponent = ({
   const theme = useContext<Theme>(ThemeContext);
   const themeButtonsColors = theme.colors.button;
 
-  const cardForm = useFormik<CardValues>({
+  const cardForm = useFormik<CardDetails>({
     initialValues: {
       cardNumber: '',
       expiryDate: '',
       cvv: '',
       postalCode: '',
     },
-    // TODO: CHANGE NAME?
     onSubmit: onSubmitted,
   });
 
@@ -46,7 +46,7 @@ export const CardForm: CardFormComponent = ({
             name="expiryDate"
             value={cardForm.values.expiryDate}
             onChange={cardForm.handleChange}
-            fieldSize="md"
+            fieldSize="sm"
           />
 
           <TextField
@@ -54,7 +54,7 @@ export const CardForm: CardFormComponent = ({
             name="cvv"
             value={cardForm.values.cvv}
             onChange={cardForm.handleChange}
-            fieldSize="md"
+            fieldSize="sm"
           />
         </SecurityDetailsContainer>
       </Box>
@@ -68,14 +68,13 @@ export const CardForm: CardFormComponent = ({
         />
       </Box>
 
-      <Button
-        color={themeButtonsColors.backgroundCardUpgrade}>
-          UPGRADE
+      <Button color={themeButtonsColors.backgroundCardUpgrade}>
+          <Typography>UPGRADE</Typography>
       </Button>
     </FlexboxContainer>
   );
 };
 
 const SecurityDetailsContainer = styled(FlexboxContainer)`
-  width: ${props => props.theme.sizes.container}px;
+  width: ${props => props.theme.sizes.breakpoints.md};
 `;

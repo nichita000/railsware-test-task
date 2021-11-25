@@ -1,5 +1,6 @@
-import { useField } from "formik";
 import React, { useState } from "react";
+import Icon from "../../components/content/Icon";
+import Typography from "../../components/content/Typography";
 import Button from "../../components/inputs/Button";
 import TextField from "../../components/inputs/TextField";
 import Box from "../../components/layout/Box";
@@ -26,13 +27,14 @@ export const ForgotPasswordForm: ForgotPasswordFormComponent = ({
           type="email"
           name="email"
           value={email}
-          placeholder="Email"
+          placeholder="email"
+          prefixIcon={<Icon.Contact />}
           onChange={handleOnChange}
         />
       </Box>
 
       <Button onClick={handleSubmitted}>
-        Reset
+        <Typography>RESET</Typography>
       </Button>
     </FlexboxContainer>
   );

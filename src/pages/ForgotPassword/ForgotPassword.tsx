@@ -4,39 +4,44 @@ import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import { ForgotPasswordForm } from './ForgotPasswordForm';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ForgotPassword = () => {
   const handleResetSubmitted = (email: string) => console.table({ email });
 
   return (
-    <ForgotPasswordFormContainer
-    direction="column"
-    justifyContent="space-between"
-    alignItems="center">
+    <Box py="lg">
+      <ForgotPasswordFormContainer
+      direction="column"
+      justifyContent="space-between"
+      alignItems="center">
 
-      <FlexboxContainer direction="column" alignItems="center">
-        <Box pb="md">
-          <img src={ForgotPasswordIllustration} alt="Forgot Password Illustration" />
-        </Box>
+        <FlexboxContainer
+          direction="column"
+          alignItems="center">
 
-        <Box pb="md">
-          <Typography heading>
-            Forgot Password
-          </Typography>
-        </Box>
+          <Box pb="md">
+            <img src={ForgotPasswordIllustration} alt="Forgot Password Illustration" />
+          </Box>
 
-        <ForgotPasswordForm onSubmitted={handleResetSubmitted} />
-      </FlexboxContainer>
+          <Box pb="md">
+            <Typography heading>
+              Forgot Password
+            </Typography>
+          </Box>
 
-      <span>
-        <Typography hint>Already have an account?</Typography>
-        <Typography link>Login here</Typography>
-      </span>
-    </ForgotPasswordFormContainer>
+          <ForgotPasswordForm onSubmitted={handleResetSubmitted} />
+        </FlexboxContainer>
+
+          <span>
+            <Typography hint>Already have an account?</Typography>
+            <Typography link as={Link} to="/login">Login here</Typography>
+          </span>
+      </ForgotPasswordFormContainer>
+    </Box>
   );
 };
 
 const ForgotPasswordFormContainer = styled(FlexboxContainer)`
-// TODO: hardcode
-  height: 840px;
+  height: 665px;
 `;

@@ -5,14 +5,15 @@ import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
-import LoginFormComponent, { LoginFormValues } from './LoginForm.types';
+import LoginFormComponent, { UserDetails } from './LoginForm.types';
+import Icon from '../../components/content/Icon';
+import FlexboxContainer from '../../components/layout/FlexboxContainer';
 
 const LoginForm: LoginFormComponent = ({
   onSubmit: onSubmitProp,
 }) => {
-  const handleSubmit = (values: LoginFormValues) => onSubmitProp(values);
-  // TODO: ???
-  const form = useFormik<LoginFormValues>({
+  const handleSubmit = (values: UserDetails) => onSubmitProp(values);
+  const loginForm = useFormik<UserDetails>({
     initialValues: {
       email: '',
       password: '',
@@ -21,47 +22,47 @@ const LoginForm: LoginFormComponent = ({
   });
 
   return (
-    <LoginFormContainer onSubmit={form.handleSubmit}>
+    <FlexboxContainer as="form"
+      direction="column"
+      alignItems="center"
+      onSubmit={loginForm.handleSubmit}>
+
       <Box pb="md">
         <TextField primary
-          placeholder="Email"
+          placeholder="email"
           name="email"
-          value={form.values.email}
-          onChange={form.handleChange}
+          value={loginForm.values.email}
+          prefixIcon={<Icon.Contact />}
+          onChange={loginForm.handleChange}
         />
       </Box>
 
       <Box pb="md">
         <TextField
-          placeholder="Password"
+          placeholder="password"
           name="password"
           type="password"
-          value={form.values.password}
-          onChange={form.handleChange}
+          value={loginForm.values.password}
+          prefixIcon={<Icon.Lock color="secondary" />}
+          onChange={loginForm.handleChange}
         />
 
-        <ForgotPasswordLinkContainer>
+        <ForgotPasswordLinkContainer justifyContent="flex-end">
           <Typography link as={Link} to="/forgot-password">
             Forgot Password?
           </Typography>
         </ForgotPasswordLinkContainer>
       </Box>
 
-      <Button>LOG IN</Button>
-    </LoginFormContainer>
+      <Button>
+        <Typography>LOG IN</Typography>
+      </Button>
+    </FlexboxContainer>
   );
 };
 
-const LoginFormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ForgotPasswordLinkContainer = styled.div`
+const ForgotPasswordLinkContainer = styled(FlexboxContainer)`
   width: ${props => props.theme.sizes.common.fullWidth};
-  display: flex;
-  justify-content: flex-end;
 `;
 
 export default LoginForm;
