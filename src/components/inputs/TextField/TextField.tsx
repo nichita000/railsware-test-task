@@ -49,15 +49,15 @@ export const TextField: TextFieldComponent = ({
         value={value}
         type={type}
         name={name}
-        hasPrefixIcon={Boolean(PrefixIcon)}
-        fieldSize={fieldSize}
-        primary={primary}
         onChange={handleChange}
         autoComplete={
           isPasswordType ?
             SupportedAutocompleteOptions.CurrentPassword :
             SupportedAutocompleteOptions.Off
         }
+        $hasPrefixIcon={Boolean(PrefixIcon)}
+        $fieldSize={fieldSize}
+        $primary={primary}
         {...props}
       />
     </FormField>
@@ -75,8 +75,8 @@ const IconPrefixContainer = styled.div`
 `
 
 const StyledTextField = styled.input<StyledTextFieldProps>`
-  width: ${props => props.fieldSize ?
-    props.theme.sizes.breakpoints[props.fieldSize] :
+  width: ${props => props.$fieldSize ?
+    props.theme.sizes.breakpoints[props.$fieldSize] :
     props.theme.sizes.breakpoints.md
   };
   border-radius: 5px;
@@ -93,11 +93,11 @@ const StyledTextField = styled.input<StyledTextFieldProps>`
     font-weight: normal;
   }
 
-  ${props => props.hasPrefixIcon && css`
+  ${props => props.$hasPrefixIcon && css`
     padding-left: 46px;
   `}
 
-  ${props => props.primary && css`
+  ${props => props.$primary && css`
     border-color: ${props => props.theme.colors.textField.borderPrimary};
     color: ${props => props.theme.colors.textField.colorPrimary};
 

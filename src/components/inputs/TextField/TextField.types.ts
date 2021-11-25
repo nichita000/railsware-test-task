@@ -15,9 +15,9 @@ export enum SupportedAutocompleteOptions {
 };
 
 export type StyledTextFieldProps = {
-  fieldSize?: keyof ThemeSizes['breakpoints'];
-  hasPrefixIcon?: boolean;
-  primary?: boolean;
+  $fieldSize?: keyof ThemeSizes['breakpoints'];
+  $hasPrefixIcon?: boolean;
+  $primary?: boolean;
   mask?: string;
   maskPlaceholder?: null;
 } & React.DOMAttributes<HTMLInputElement>;
