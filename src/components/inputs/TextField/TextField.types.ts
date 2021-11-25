@@ -15,6 +15,11 @@ export enum SupportedAutocompleteOptions {
 };
 
 export type StyledTextFieldProps = {
+  /** Some properties are named with `$` prefix
+   * in order to not to inject them in DOM as valid attributes.
+   *
+   * You can read about it here - `https://styled-components.com/docs/api#transient-props`
+   * */
   $fieldSize?: keyof ThemeSizes['breakpoints'];
   $hasPrefixIcon?: boolean;
   $primary?: boolean;
@@ -36,6 +41,4 @@ type TextFieldProps = {
   onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export type TextFieldComponent = React.FC<
-  TextFieldProps &
-  React.DOMAttributes<HTMLInputElement>>;
+export type TextFieldComponent = React.FC<TextFieldProps & React.DOMAttributes<HTMLInputElement>>;
