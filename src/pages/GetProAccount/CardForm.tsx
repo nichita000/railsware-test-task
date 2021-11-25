@@ -72,7 +72,7 @@ export const CardForm: CardFormComponent = ({
         />
       </Box>
 
-      <Button color={themeButtonsColors.backgroundCardUpgrade}>
+      <Button color={themeButtonsColors.backgroundCardUpgrade} type="submit">
           <Typography>UPGRADE</Typography>
       </Button>
     </FlexboxContainer>

@@ -55,7 +55,7 @@ const LoginForm: LoginFormComponent = ({
         </ForgotPasswordLinkContainer>
       </Box>
 
-      <Button>
+      <Button type="submit">
         <Typography>LOG IN</Typography>
       </Button>
     </FlexboxContainer>
