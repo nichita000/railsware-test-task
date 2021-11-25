@@ -35,7 +35,9 @@ export const ForgotPassword = () => {
 
           <span>
             <Typography hint>Already have an account?</Typography>
-            <Typography link as={Link} to="/login">Login here</Typography>
+            <Link to="/login">
+              <Typography link>Login here</Typography>
+            </Link>
           </span>
       </ForgotPasswordFormContainer>
     </Box>

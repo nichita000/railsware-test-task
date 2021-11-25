@@ -48,9 +48,9 @@ const LoginForm: LoginFormComponent = ({
         />
 
         <ForgotPasswordLinkContainer justifyContent="flex-end">
-          <Typography link as={Link} to="/forgot-password">
-            Forgot Password?
-          </Typography>
+          <Link to="/forgot-password">
+            <Typography link> Forgot Password? </Typography>
+          </Link>
         </ForgotPasswordLinkContainer>
       </Box>
 

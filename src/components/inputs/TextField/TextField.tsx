@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import TextFieldComponent, { StyledTextFieldProps } from "./TextField.types";
+import { TextFieldComponent, StyledTextFieldProps, SupportedTextFieldTypes, SupportedAutocompleteOptions } from "./TextField.types";
 
 export const TextField: TextFieldComponent = ({
   className,
   placeholder,
   value: valueProp,
-  type = 'text',
+  type = SupportedTextFieldTypes.Text,
   name = '',
   fieldSize,
   primary,
   prefixIcon: PrefixIcon,
-  onChange
+  onChange,
+  ...props
 }) => {
   const [value, setValue] = useState<string>(valueProp ?? '');
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
 
@@ -22,6 +22,8 @@ export const TextField: TextFieldComponent = ({
       onChange(event);
     }
   }
+
+  const isPasswordType = type === SupportedTextFieldTypes.Password;
 
   return (
     <FormField>
@@ -41,6 +43,12 @@ export const TextField: TextFieldComponent = ({
         fieldSize={fieldSize}
         primary={primary}
         onChange={handleChange}
+        autoComplete={
+          isPasswordType ?
+            SupportedAutocompleteOptions.CurrentPassword :
+            SupportedAutocompleteOptions.Off
+        }
+        {...props}
       />
     </FormField>
   );

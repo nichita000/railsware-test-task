@@ -1,10 +1,24 @@
+import React from "react";
 import { ThemeSizes } from "../../../theme/Theme.types";
+
+export enum SupportedTextFieldTypes {
+  Text = 'text',
+  Email = 'email',
+  Password = 'password',
+};
+
+export enum SupportedAutocompleteOptions {
+  On = 'on',
+  Off = 'off',
+  CurrentPassword = 'current-password',
+};
 
 export type StyledTextFieldProps = {
   fieldSize?: keyof ThemeSizes['breakpoints'];
   hasPrefixIcon?: boolean;
   primary?: boolean;
-};
+} & React.DOMAttributes<HTMLInputElement>;
+
 
 type TextFieldProps = {
   className?: string;
@@ -19,6 +33,4 @@ type TextFieldProps = {
   onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-type TextFieldComponent = React.FC<TextFieldProps>;
-
-export default TextFieldComponent;
+export type TextFieldComponent = React.FC<TextFieldProps & React.DOMAttributes<HTMLInputElement>>;
