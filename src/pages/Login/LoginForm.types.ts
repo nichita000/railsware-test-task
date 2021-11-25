@@ -7,6 +7,4 @@ type LoginFormProps = {
   onSubmit: (values: UserDetails) => void;
 }
 
-type LoginFormComponent = React.FC<LoginFormProps>;
-
-export default LoginFormComponent;
+export type LoginFormComponent = React.FC<LoginFormProps>;

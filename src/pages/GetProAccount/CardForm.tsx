@@ -1,5 +1,5 @@
-import { useFormik } from 'formik';
 import { useContext } from 'react';
+import { useFormik } from 'formik';
 import styled, { ThemeContext } from 'styled-components';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
@@ -8,6 +8,7 @@ import Box from '../../components/layout/Box';
 import FlexboxContainer from '../../components/layout/FlexboxContainer';
 import Theme from '../../theme/Theme.types';
 import { CardFormComponent, CardDetails } from './CardForm.type';
+import { textFieldMasks } from '../../shared/text-field-masks';
 
 export const CardForm: CardFormComponent = ({
   onSubmitted,
@@ -36,6 +37,7 @@ export const CardForm: CardFormComponent = ({
           name="cardNumber"
           value={cardForm.values.cardNumber}
           onChange={cardForm.handleChange}
+          mask={textFieldMasks.cardNumber}
         />
       </Box>
 
@@ -47,6 +49,7 @@ export const CardForm: CardFormComponent = ({
             value={cardForm.values.expiryDate}
             onChange={cardForm.handleChange}
             fieldSize="sm"
+            mask={textFieldMasks.expiryDate}
           />
 
           <TextField
@@ -55,6 +58,7 @@ export const CardForm: CardFormComponent = ({
             value={cardForm.values.cvv}
             onChange={cardForm.handleChange}
             fieldSize="sm"
+            mask={textFieldMasks.cvv}
           />
         </SecurityDetailsContainer>
       </Box>

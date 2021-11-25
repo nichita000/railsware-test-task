@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Icon from "../../components/content/Icon";
-import Typography from "../../components/content/Typography";
-import Button from "../../components/inputs/Button";
-import TextField from "../../components/inputs/TextField";
-import Box from "../../components/layout/Box";
-import FlexboxContainer from "../../components/layout/FlexboxContainer";
-import { ForgotPasswordFormComponent } from "./ForgotPasswordForm.types";
+import { useState } from 'react';
+import Icon from '../../components/content/Icon';
+import Typography from '../../components/content/Typography';
+import Button from '../../components/inputs/Button';
+import TextField from '../../components/inputs/TextField';
+import Box from '../../components/layout/Box';
+import FlexboxContainer from '../../components/layout/FlexboxContainer';
+import { ForgotPasswordFormComponent } from './ForgotPasswordForm.types';
 
 export const ForgotPasswordForm: ForgotPasswordFormComponent = ({
   onSubmitted,

@@ -1,17 +1,24 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import { TextFieldComponent, StyledTextFieldProps, SupportedTextFieldTypes, SupportedAutocompleteOptions } from "./TextField.types";
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import InputMask from 'react-input-mask';
+import {
+  TextFieldComponent,
+  StyledTextFieldProps,
+  SupportedTextFieldTypes,
+  SupportedAutocompleteOptions,
+} from './TextField.types';
 
 export const TextField: TextFieldComponent = ({
   className,
   placeholder,
   value: valueProp,
   type = SupportedTextFieldTypes.Text,
-  name = '',
+  name,
   fieldSize,
   primary,
   prefixIcon: PrefixIcon,
   onChange,
+  mask,
   ...props
 }) => {
   const [value, setValue] = useState<string>(valueProp ?? '');
@@ -21,7 +28,7 @@ export const TextField: TextFieldComponent = ({
     if (onChange) {
       onChange(event);
     }
-  }
+  };
 
   const isPasswordType = type === SupportedTextFieldTypes.Password;
 
@@ -34,6 +41,9 @@ export const TextField: TextFieldComponent = ({
       )}
 
       <StyledTextField
+        as={Boolean(mask) ? InputMask : 'input'}
+        mask={mask}
+        maskPlaceholder={null}
         className={className}
         placeholder={placeholder}
         value={value}
@@ -80,6 +90,7 @@ const StyledTextField = styled.input<StyledTextFieldProps>`
 
   &::placeholder {
     color: ${props => props.theme.colors.textField.placeholder};
+    font-weight: normal;
   }
 
   ${props => props.hasPrefixIcon && css`

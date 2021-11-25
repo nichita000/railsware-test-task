@@ -19,10 +19,8 @@ type FlexAlignItems =
   | 'flex-end'
   | 'center';
 
-type FlexboxContainerProps = {
+export type FlexboxContainerProps = {
   direction?: FlexDirection;
   justifyContent?: FlexJustifyContent;
   alignItems?: FlexAlignItems;
-}
-
-export default FlexboxContainerProps;
+};

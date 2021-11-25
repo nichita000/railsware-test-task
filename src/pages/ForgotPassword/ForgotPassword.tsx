@@ -1,10 +1,10 @@
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import FlexboxContainer from '../../components/layout/FlexboxContainer';
 import ForgotPasswordIllustration from '../../assets/images/forgot-password-illustration.svg';
 import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import { ForgotPasswordForm } from './ForgotPasswordForm';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const ForgotPassword = () => {
   const handleResetSubmitted = (email: string) => console.table({ email });
@@ -45,5 +45,5 @@ export const ForgotPassword = () => {
 };
 
 const ForgotPasswordFormContainer = styled(FlexboxContainer)`
-  height: 665px;
+  height: ${props => props.theme.sizes.breakpoints.lg};
 `;

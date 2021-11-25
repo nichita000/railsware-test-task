@@ -21,5 +21,5 @@ export const GetProAccount = () => {
 
       <CardForm onSubmitted={handleUpgradeSubmitted} />
     </FlexboxContainer>
-  )
-}
+  );
+};

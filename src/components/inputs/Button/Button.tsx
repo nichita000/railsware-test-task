@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import ButtonProps from './Button.types';
+import { ButtonProps } from './Button.types';
 
 export const Button = styled.button<ButtonProps>`
   width: ${props => props.size ?

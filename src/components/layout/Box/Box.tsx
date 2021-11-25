@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import BoxProps from './Box.types';
+import { BoxProps } from './Box.types';
 
 /**
  * Box component is built in order to unify the usage of

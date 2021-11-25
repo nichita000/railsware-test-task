@@ -1,13 +1,14 @@
 import { useFormik } from 'formik';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import Box from '../../components/layout/Box';
 import Typography from '../../components/content/Typography';
 import Button from '../../components/inputs/Button';
 import TextField from '../../components/inputs/TextField';
-import LoginFormComponent, { UserDetails } from './LoginForm.types';
 import Icon from '../../components/content/Icon';
 import FlexboxContainer from '../../components/layout/FlexboxContainer';
+import { LoginFormComponent, UserDetails } from './LoginForm.types';
+import { routes } from '../../shared/routes';
 
 const LoginForm: LoginFormComponent = ({
   onSubmit: onSubmitProp,
@@ -48,7 +49,7 @@ const LoginForm: LoginFormComponent = ({
         />
 
         <ForgotPasswordLinkContainer justifyContent="flex-end">
-          <Link to="/forgot-password">
+          <Link to={routes.forgotPassword}>
             <Typography link> Forgot Password? </Typography>
           </Link>
         </ForgotPasswordLinkContainer>

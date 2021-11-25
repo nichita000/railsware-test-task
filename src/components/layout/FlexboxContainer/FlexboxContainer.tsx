@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FlexboxContainerProps from './FlexboxContainer.types';
+import { FlexboxContainerProps } from './FlexboxContainer.types';
 
 export const FlexboxContainer = styled.div<FlexboxContainerProps>`
   width: ${props => props.theme.sizes.common.fullWidth};

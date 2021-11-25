@@ -38,7 +38,7 @@ const sizes: ThemeSizes = {
     lg: '50px',
   },
   breakpoints: {
-    lg: '840px',
+    lg: '665px',
     md: '344px',
     sm: '165px',
   },

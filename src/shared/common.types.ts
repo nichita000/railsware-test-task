@@ -3,3 +3,5 @@ export type ResponsiveSizes<T> = {
   md: T;
   lg: T;
 };
+
+export type ValueOf<T> = T[keyof T];

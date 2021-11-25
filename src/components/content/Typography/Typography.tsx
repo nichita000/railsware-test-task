@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import TypographyProps from './Typography.types';
+import { TypographyProps } from './Typography.types';
 
 export const Typography = styled.span<TypographyProps>`
   font-family: 'Roboto', sans-serif;

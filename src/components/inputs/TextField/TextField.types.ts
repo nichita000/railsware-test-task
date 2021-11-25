@@ -1,5 +1,6 @@
-import React from "react";
-import { ThemeSizes } from "../../../theme/Theme.types";
+import { ThemeSizes } from '../../../theme/Theme.types';
+import { textFieldMasks } from '../../../shared/text-field-masks';
+import { ValueOf } from '../../../shared/common.types';
 
 export enum SupportedTextFieldTypes {
   Text = 'text',
@@ -17,8 +18,9 @@ export type StyledTextFieldProps = {
   fieldSize?: keyof ThemeSizes['breakpoints'];
   hasPrefixIcon?: boolean;
   primary?: boolean;
+  mask?: string;
+  maskPlaceholder?: null;
 } & React.DOMAttributes<HTMLInputElement>;
-
 
 type TextFieldProps = {
   className?: string;
@@ -30,7 +32,10 @@ type TextFieldProps = {
   name?: string;
   fieldSize?: keyof ThemeSizes['breakpoints'];
   primary?: boolean;
+  mask?: ValueOf<typeof textFieldMasks>;
   onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export type TextFieldComponent = React.FC<TextFieldProps & React.DOMAttributes<HTMLInputElement>>;
+export type TextFieldComponent = React.FC<
+  TextFieldProps &
+  React.DOMAttributes<HTMLInputElement>>;
